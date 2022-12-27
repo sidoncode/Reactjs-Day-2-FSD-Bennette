@@ -2,8 +2,54 @@ import React, { Component}from 'react';
 import './App.css';
 
 class App extends Component {
+  // functional Components // 
+  // Here in This Example We have Imported the - Functional Component - That is the
+  // Named - First and Second
 
-  constructor(){
+  render() {
+
+    return(
+      <div>
+        <First/>
+        <Second/>
+      </div>
+    )
+  }
+}
+
+class First extends React.Component {
+
+  render(){
+
+    return(
+      <div>
+        <h1>First Component</h1>
+      </div>
+    )
+
+  }
+
+}
+
+class Second extends React.Component {
+  
+  render(){
+
+    return(
+      <div>
+      <h1>Second Component</h1>
+    </div>
+    )
+
+  }
+
+}
+
+
+export default App;
+
+
+  /*constructor(){
 
     super();
 
@@ -69,6 +115,5 @@ class List extends React.Component {
     )
   }
 
-}
+}*/
 
-export default App;
