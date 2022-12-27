@@ -5,23 +5,40 @@ class App extends Component {
     // to set the state, it is required to call the super() method in the constructor, it is because,
     // this.state is unintialized before the super() method has been called.
     super();
-    this.state = {displayBIO: true};
+    this.state = {displayBIO: false};
+    console.log('Component this',this);
+    // this is where we have intialized a new state //
+    this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+  }
+  toggleDisplayBio(){
+    this.setState(
+      {displayBIO: !this.state.displayBIO}
+    )
   }
 
   render(){
-    const bio = this.state.displayBIO ? (
-        <div>
-            <p>
-                <h3>
-                  This is the Sample Code for Showing the Usage of States in ReactJS
-                </h3>
-            </p>
-        </div>
-    ):null;
     return (
       <div>
-          <h1>Welcome to StateFull Component</h1>
-          {bio}
+          <h1>
+            Welcome to the State Changing Excercise
+            {
+              this.state.displayBIO ? (
+                <div>
+                    <p>
+                        <h4>
+                          This is the Content Which will be Available When we have - Clicked on the Button - Named
+                          as Read More...
+                        </h4>
+                    </p>
+                </div>
+              ):
+               (
+                  <div>
+                    <button onClick={this.toggleDisplayBio}>Read More</button>
+                  </div>
+              )
+            }
+          </h1>
       </div>
     )
   }
