@@ -1,6 +1,25 @@
 import React, { Component}from 'react';
-import './App.css';
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
+
+    return (
+      <div>
+          <h1> Welcome to {this.props.name}</h1>
+      </div>
+
+    )
+  }
+
+
+}
+export default App;
+
+  /*
   constructor(){
     // to set the state, it is required to call the super() method in the constructor, it is because,
     // this.state is unintialized before the super() method has been called.
@@ -44,7 +63,7 @@ class App extends Component {
   }
 }
 export default App;
-
+*/
 
   /*// functional Components // 
   // Here in This Example We have Imported the - Functional Component - That is the
