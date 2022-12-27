@@ -12,15 +12,15 @@ class App extends Component {
       data:
       [
         {
-
+            "name":"Abhishek"
         },
 
         {
-
+          "name":"Rohan"
         },
 
         {
-
+          "name":"Ajay"
         }
       ]
     } 
@@ -30,8 +30,10 @@ class App extends Component {
     return (
 
       <div>
-
-
+        <StudentName/>
+        <ul>
+          {this.state.data.map((item) => <List data = {item}/>)}
+          </ul>
       </div>
 
     )
@@ -62,7 +64,7 @@ class List extends React.Component {
     return (
       // UL -> STANDS FOR  unordered List.
       <ul>
-        <li> </li>
+        <li>{this.props.data.name} </li>
       </ul>
     )
   }
