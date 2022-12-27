@@ -1,8 +1,35 @@
 import React, { Component}from 'react';
 import './App.css';
-import {FirstComponent} from './myComponents/FirstComponent';
 class App extends Component {
-  // functional Components // 
+  constructor(){
+    // to set the state, it is required to call the super() method in the constructor, it is because,
+    // this.state is unintialized before the super() method has been called.
+    super();
+    this.state = {displayBIO: true};
+  }
+
+  render(){
+    const bio = this.state.displayBIO ? (
+        <div>
+            <p>
+                <h3>
+                  This is the Sample Code for Showing the Usage of States in ReactJS
+                </h3>
+            </p>
+        </div>
+    ):null;
+    return (
+      <div>
+          <h1>Welcome to StateFull Component</h1>
+          {bio}
+      </div>
+    )
+  }
+}
+export default App;
+
+
+  /*// functional Components // 
   // Here in This Example We have Imported the - Functional Component - That is the
   // Named - First and Second
 
