@@ -1,7 +1,114 @@
-import React, { Component}from 'react';
-class App extends Component {
+import React, { Component} from 'react';
+import PropTypes from 'prop-types';
+
+
+class App extends React.Component {
+
 
   render(){
+
+    return(
+      <div>
+          <h1>Reactjs Props Validation Example</h1>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Value</th>
+              <th>Valid</th>
+            </tr>
+
+            <tr>
+              <td>Array</td>
+              <td>{this.props.propArray}</td>
+              
+              <td>
+                {this.props.propArray ? "true" : "false"}
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Boolean</td>
+              <td>{this.props.propBool ? "true" : "false"}</td>
+
+              <td>{this.props.propBool ? "true" : "false"}</td>
+
+            </tr>
+
+            
+            <tr>
+              <td>String</td>
+              <td>{this.props.propString}</td>
+              <td>{this.props.propString ? "true" : "false"}</td>
+            </tr>
+
+            <tr>
+              <td>Number</td>
+              <td>{this.props.propNumber}</td>
+              <td>
+                {this.props.propNumber ? "true" : "false"}
+              </td>
+            </tr>
+          </table>
+      </div>
+    )
+
+  }
+}
+
+App.propTypes = {
+  propsArray:PropTypes.array.isRequired,
+  propsBool:PropTypes.bool.isRequired,
+  propsFunc:PropTypes.func,
+  propsNumber:PropTypes.number,
+  propsString:PropTypes.string,
+}
+App.defaultProps = {
+  propsArray:[1,2,3,4,5],
+  propsBool:true,
+  //propsFunc:function(x){return x +5},
+  propNumber:10,
+  propsString:"Day3-FSD trng",
+}
+
+export default App;
+
+
+/*class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name:"Day3"
+    }
+  }
+
+  render(){
+
+    return(
+      <div>
+        <STP stpObj = {this.state.name}/>
+      </div>
+    )
+  }
+
+}
+export default App;
+
+class STP extends React.Component {
+  render(){
+    return(
+      <div>
+        <h1>State and Props Example</h1>
+        <h3>Welcome to {this.props.stpObj}</h3>
+      </div>
+    )
+  }
+}
+
+*/
+  /*render(){
 
     return (
       <div>
@@ -9,11 +116,8 @@ class App extends Component {
       </div>
 
     )
-  }
+  }*/
 
-
-}
-export default App;
 
   /*
   constructor(){
